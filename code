@@ -3,18 +3,25 @@
 <body>
   <script>
     var done1 = "="
-    var code = [":", ";", "~", "<", ">", "+","£", "€", "%", "#", "=", '"', "$", "^", "'", "/", '\\', "_", "|", "1", "3", "4", "2", "5", "7", "6"]
+    var code = [":", ";", "~", "<", ">", "+","£", "€", "%", "#", "=", '"', "$", "^", "'", "/", '\\', "_", "|", "1", "3", "4", "2", "5", "7", "6", "[]"]
     function encrypt(element, index, array) {
       console.log(element);
-          index=(element.charCodeAt(0)-97);
-          console.log(code[index]);
-          var done = code[index]
-          done1 = done1.concat(done)
-          console.log(done1)
-          document.getElementById("encryption").value = done1
+      console.log(element.charCodeAt(0))
+      if(element.charCodeAt(0) > 96) {
+        index=(element.charCodeAt(0)-97);
+      } else {
+        index=(element.charCodeAt(0)-6)
+      }
+      console.log(index)
+      console.log(code[index]);
+      var done = code[index]
+      done1 = done1.concat(done)
+      console.log(done1)
+      document.getElementById("encryption").value = done1
     }
 
     function process() {
+      done1 = "="
       var x = document.getElementById("encryption").value
       var xchr = x.split("");
       xchr.forEach(encrypt);
