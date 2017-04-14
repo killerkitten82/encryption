@@ -1,25 +1,27 @@
 <!DOCTYPE HTML>
 <html>
 <body>
+  <script>
+    var done1 = "="
+    var code = [":", ";", "~", "<", ">", "+","£", "€", "%", "#", "=", '"', "$", "^", "'", "/", '\\', "_", "|", "1", "3", "4", "2", "5", "7", "6"]
+    function encrypt(element, index, array) {
+      console.log(element);
+          index=(element.charCodeAt(0)-97);
+          console.log(code[index]);
+          var done = code[index]
+          done1 = done1.concat(done)
+          console.log(done1)
+          document.getElementById("encryption").value = done1
+    }
 
+    function process() {
+      var x = document.getElementById("encryption").value
+      var xchr = x.split("");
+      xchr.forEach(encrypt);
 
-<script>
-  var code = [":", ";", "~", "<", ">", "+","£", "€", "%", "#", "=", '"', "$", "^", "'", "/", '\\', "_", "|", "1", "3", "4", "2", "5", "7", "6"]
-  function encrypt(element, index, array) {
-    console.log(element);
-        index=(element.charCodeAt(0)-97);
-        console.log(code[index]);
-        document.getElementById("encryption").value = (code[index])
-  }
-
-  function process() {
-    var x = document.getElementById("encryption").value
-    var xchr = x.split("");
-    xchr.forEach(encrypt);
-
-  }
-</script>
-  Code: <input type="text" id="encryption"></br>
-  <button onclick="process()">Encrypt</button>
+    }
+  </script>
+    Code: <input type="text" id="encryption"></br>
+    <button onclick="process()">Encrypt</button>
 </body>
 </html>
