@@ -5,7 +5,7 @@
 
 <script>
   var code = [":", ";", "~", "<", ">", "+","£", "€", "%", "#", "=", '"', "$", "^", "'", "/", '\\', "_", "|", "1", "3", "4", "2", "5", "7", "6"]
-  function decrypt(element, index, array) {
+  function encrypt(element, index, array) {
     console.log(element);
         index=(element.charCodeAt(0)-97);
         console.log(code[index]);
@@ -15,11 +15,11 @@
   function process() {
     var x = document.getElementById("encryption").value
     var xchr = x.split("");
-    xchr.forEach(decrypt);
+    xchr.forEach(encrypt);
 
   }
 </script>
   Code: <input type="text" id="encryption"></br>
-  <button onclick="process()">Decrypt</button>
+  <button onclick="process()">Encrypt</button>
 </body>
 </html>
