@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
-<body>
+<body bgcolor="Pink">
+  
   <script>
     var done1 = "="
     var code = [":", ";", "~", "<", ">", "+","£", "€", "%", "#", "=", '"', "$", "^", "'", "/", '\\', "_", "|", "1", "3", "4", "2", "5", "7", "6", "[]"]
@@ -28,7 +29,8 @@
 
     }
   </script>
-    Code: <input type="text" id="encryption"><output id="doneres"></output></br>
-    <button onclick="process()">Encrypt</button>
+  <center><h1>Enter your message below to have it encrypted</h1>
+  Message: <input type="text" id="encryption"><output id="doneres"></output></br>
+  <button onclick="process()">Encrypt</button></center>
 </body>
 </html>
