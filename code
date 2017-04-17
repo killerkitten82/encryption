@@ -1,10 +1,11 @@
 <!DOCTYPE HTML>
 <html>
 <body bgcolor="Pink">
-  
+
   <script>
     var done1 = "="
     var code = [":", ";", "~", "<", ">", "+","£", "€", "%", "#", "=", '"', "$", "^", "'", "/", '\\', "_", "|", "1", "3", "4", "2", "5", "7", "6", "[]"]
+    var decode = [];
     function encrypt(element, index, array) {
       console.log(element);
       console.log(element.charCodeAt(0))
@@ -21,16 +22,41 @@
       document.getElementById("doneres").value = done1
     }
 
-    function process() {
+    function process1() {
       done1 = "= "
       var x = document.getElementById("encryption").value
       var xchr = x.split("");
       xchr.forEach(encrypt);
 
     }
+    function rev(element,index){
+      decode[element] =  String.fromCharCode(index+97);
+        // console.log(element + " : " + decode[element])
+
+    };
+    decode['['] = ' ';
+    decode[']'] = '';
+
+    code.forEach(rev);
+
+
+    function decrypt(element, index, array) {
+      console.log(element);
+      console.log(decode[element])
+      done1 = done1.concat(decode[element])
+      document.getElementById("doneres").value = done1
+    }
+
+    function process2() {
+      done1 = "= "
+      var x = document.getElementById("encryption").value
+      var xchr = x.split("");
+      xchr.forEach(decrypt);
+
+    }
   </script>
-  <center><h1>Enter your message below to have it encrypted</h1>
+  <center><h1>Enter your message below to have it encrypted/decrypted</h1>
   Message: <input type="text" id="encryption"><output id="doneres"></output></br>
-  <button onclick="process()">Encrypt</button></center>
+  <button onclick="process1()">Encrypt</button><button onclick="process2()">Decrypt</button></center>
 </body>
 </html>
