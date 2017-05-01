@@ -1,30 +1,55 @@
 <!DOCTYPE HTML>
+
 <html>
+
 <body bgcolor="Pink">
 
-  <script>
+  
+<script>
     var done1 = "="
-    var code = [":", ";", "~", "<", ">", "+","8", "9", "%", "#", "=", '"', "$", "^", "'", "/", '\\', "_", "|", "1", "3", "4", "2", "5", "7", "6", "[]"]
-    var decode = [];
-    function encrypt(element, index, array) {
+    
+var code = [":", ";", "~", "<", ">", "+","8", "9", "%", "#", "=", '"', "$", "^", "'", "/", '\\', "_", "|", "1", "3", "4", "2", "5", "7", "6", "[]"]
+    
+var decode = [];
+    
+function encrypt(element, index, array) {
+
       console.log(element);
+
       console.log(element.charCodeAt(0))
+
       if(element.charCodeAt(0) > 96) {
+
         index=(element.charCodeAt(0)-97);
-      } else {
+
+      } else if (element.charCodeAt(0) == 32){
+
         index=(element.charCodeAt(0)-6)
+
+      } else {
+        index=(element.charCodeAt(0)-65)
       }
       console.log(index)
+
       console.log(code[index]);
+
       var done = code[index]
+
       done1 = done1.concat(done)
+
       console.log(done1)
+
       document.getElementById("doneres").value = done1
+
     }
 
+
     function process1() {
+
       done1 = "= "
+
       var x = document.getElementById("encryption").value
+
       var xchr = x.split("");
       xchr.forEach(encrypt);
 
